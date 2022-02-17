@@ -1,0 +1,16 @@
+@import '../../../sass/main';
+
+.LoadMoreBtn {
+  @include btn-reset;
+  @include block-format(_, 100px, 70px, 1.5rem auto, 0, $black-blue);
+  @include text-format(1.2rem, 400, $comfortaa-mss, $brown);
+  box-shadow: 4px 4px 5px $aqua-gray-trans;
+  border-radius: 10px;
+  transition: all 0.4s;
+
+  &:hover {
+    transform: translate(4px, 4px);
+    box-shadow: 1px 1px 5px $aqua-gray-trans;
+    filter: brightness(135%);
+  }
+}

@@ -1,0 +1,21 @@
+@import '../../../sass/main';
+
+.SearchForm {
+  @include block-format(_, 70%, 100%);
+  @include flex(space-around, flex-end, column);
+
+  @media (max-width: $sm) {
+    width: 100%;
+  }
+
+  &-selects {
+    @include block-format(_, 320px, auto, 0, 0);
+    @include flex(space-between);
+
+    @media (max-width: $sm) {
+      @include block-format(_, 100%, 90px);
+      @include flex(_, flex-end, column);
+      margin-bottom: 15px;
+    }
+  }
+}

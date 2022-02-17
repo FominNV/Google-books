@@ -1,0 +1,106 @@
+@import '../../sass/main';
+
+.Header {
+  @include block-format(_, 100%, auto);
+
+  &-line1 {
+    @include block-format(_, 100%, 50px, 0, 0, $black-blue);
+
+    @media (max-width: $sm) {
+      height: auto;
+    }
+
+    &__content {
+      @include block-format(_, 100%, 100%);
+      @include flex(space-between);
+    }
+
+    &__contact {
+      @include block-format(_, auto, 100%);
+      @include flex(_, center);
+
+      @media (max-width: $sm) {
+        @include flex(_, _, column);
+      }
+
+      &_item {
+        margin-right: 40px;
+        @include text-format(0.7rem, 400, $comfortaa-mss, $aqua);
+        @include flex(_, center);
+        border-bottom: 2px solid $trans-full;
+        cursor: pointer;
+        transition: all 0.5s;
+
+        &:hover {
+          color: blue;
+          border-bottom: 2px solid blue;
+        }
+
+        @media (max-width: $md) {
+          margin: 5px 0 0;
+        }
+      }
+    }
+
+    &__authout {
+      @include block-format(_, auto, 100%);
+      @include flex(_, center);
+
+      @media (max-width: $sm) {
+        @include flex(_, _, column);
+      }
+
+      &_item {
+        margin-left: 20px;
+        color: $red;
+        cursor: pointer;
+        transition: all 0.5s;
+
+        &:hover {
+          transform: scale(1.2);
+          color: $brown;
+        }
+
+        @media (max-width: $sm) {
+          margin: 5px 0 0;
+        }
+      }
+    }
+  }
+
+  &-line2 {
+    @include block-format(_, 100%, 100px, 0, 0, $blue-dark);
+
+    @media (max-width: $md) {
+      height: auto;
+      padding-bottom: 7px;
+    }
+    @media (max-width: $sm) {
+      height: auto;
+      padding: 0;
+    }
+
+    &__content {
+      @include block-format(_, 100%, 100%);
+      @include flex(space-between, center);
+    }
+
+    &__logo {
+      @include block-format(_, 30%, 100%);
+      @include flex(center, center);
+
+      &_img {
+        width: 100px;
+        cursor: pointer;
+
+        &:hover {
+          animation: jello-horizontal 1s 1 linear;
+        }
+      }
+
+      @media (max-width: $sm) {
+        display: none;
+      }
+    }
+  }
+}

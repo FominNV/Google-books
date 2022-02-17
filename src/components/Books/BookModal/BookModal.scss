@@ -1,0 +1,87 @@
+@import '../../../sass/main';
+
+.BookModal {
+  @include scroll-bar-min;
+  @include block-format(fixed, 100%, 100%, 0, 0, rgba(46, 46, 46, 0.5));
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  @include flex(center, center);
+  z-index: 100;
+
+  &-close {
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    color: $aqua;
+    cursor: pointer;
+    transition: all 0.4s;
+
+    &:hover {
+      color: aqua;
+    }
+  }
+
+  &-content {
+    @include block-format(relative, 100%, 400px, 0, 0, $black-blue);
+    max-width: 700px;
+    @include flex;
+    @include text-format(0.8rem, 400, $comfortaa-mss, $aqua, left, 0.02rem);
+    line-height: 1.4;
+    border: 1px solid $aqua-ultra-light;
+    box-shadow: 1px 1px 13px 10px $aqua-light;
+
+    &__logo {
+      @include block-format(_, 230px, 100%);
+      @include flex(center, center);
+
+      @media (max-width: $sm) {
+        display: none;
+      }
+
+      &_img {
+        @include block-format(_, 100%, 100%);
+        transition: all 0.3s;
+        cursor: pointer;
+      }
+    }
+
+    &__info {
+      @include block-format(_, calc(100% - 230px), 100%, 0, 1rem);
+      overflow-y: auto;
+
+      @media (max-width: $sm) {
+        width: 100%;
+      }
+
+      &_item {
+        @include block-format(_, 100%, auto, 0.4rem 0 0.2rem);
+        min-height: 18px;
+        @include flex;
+
+        @media (max-width: $tiny) {
+          @include flex(_, _, column);
+        }
+      }
+
+      &_label {
+        @include block-format(_, 100px, auto);
+        @include text-format(0.9rem, 400, $comfortaa-mss, $brown, left, 0rem);
+        text-decoration: underline;
+
+        @media (max-width: $tiny) {
+          margin-bottom: 5px;
+        }
+      }
+
+      &_text {
+        @include block-format(_, calc(100% - 100px), auto);
+        @include flex(_, center);
+
+        @media (max-width: $tiny) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

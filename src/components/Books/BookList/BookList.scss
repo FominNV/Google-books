@@ -1,0 +1,22 @@
+@import '../../../sass/main';
+
+.BookList {
+  @include block-format(_, 100%, auto, 0, 0 0 2rem);
+  min-height: 300px;
+  @include flex(space-between);
+  flex-wrap: wrap;
+  overflow: hidden;
+
+  @media (max-width: $md) {
+    padding-bottom: 1rem;
+  }
+
+  &-noresults {
+    margin: 2rem auto;
+    @include text-format(1.5rem, 400, $comfortaa-mss, $aqua, center, 0.1rem);
+  }
+
+  &-loading {
+    margin: 2rem auto;
+  }
+}

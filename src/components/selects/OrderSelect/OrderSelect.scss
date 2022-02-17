@@ -1,0 +1,33 @@
+@import '../../../sass/main';
+
+.OrderSelect {
+  @include block-format(_, 150px, auto);
+
+  &-label {
+    @include block-format(_, 100%, auto, 0 0 0.2rem, 0 0 0 0.5rem);
+    @include text-format(0.8rem, 700, $comfortaa-mss, $brown, left);
+    line-height: 1.2;
+  }
+
+  &-select {
+    @include inp-reset();
+    @include block-format(_, 150px, 20px);
+    @include text-format(0.8rem, 400, $comfortaa-mss, $aqua);
+    border: 1px solid $aqua;
+    border-radius: 8px;
+    appearance: none;
+    transition: all 0.5s;
+    cursor: pointer;
+
+    &:hover {
+      border-color: blue;
+      color: blue;
+    }
+  }
+
+  &-option {
+    padding: 0.5rem;
+    background: $black-blue;
+    border: 1px solid $aqua;
+  }
+}

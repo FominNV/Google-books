@@ -1,0 +1,9 @@
+@import '../../../sass/main';
+
+@include scroll-bar-min;
+
+.Main {
+  @include block-format(_, 100%, auto);
+  min-height: 100vh;
+  background: linear-gradient(45deg, $blue-gray, $aqua-gray);
+}
